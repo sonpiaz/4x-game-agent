@@ -8,6 +8,7 @@ than pure LLM approaches.
 
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/sonpiaz/4x-game-agent)](https://github.com/sonpiaz/4x-game-agent/issues)
 
 ---
 
