@@ -1,0 +1,27 @@
+# Game Bot Configuration
+# Copy this template and customize for your game.
+
+# LLM Models
+strategic_model: "claude-sonnet-4-20250514"
+tactical_model: "claude-haiku-4-5-20251001"
+strategic_max_tokens: 1500
+tactical_max_tokens: 300
+
+# ADB Device
+adb_device: "emulator-5554"
+
+# Timing (seconds)
+tap_delay: 0.08
+action_delay: 0.3
+menu_load_wait: 1.5
+step_delay: 2.0
+
+# Paths
+screenshot_path: "/tmp/game_screen.png"
+
+# Dashboard
+dashboard_port: 8080
+
+# Screen Resolution Reference (your emulator)
+reference_width: 1440
+reference_height: 2560

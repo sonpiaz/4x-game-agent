@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "4x-game-agent"
+version = "0.1.0"
+description = "LLM-powered AI agent framework for 4X mobile strategy games"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+authors = [
+    {name = "Son Piaz"},
+]
+keywords = [
+    "game-ai", "llm-agent", "game-bot", "4x-strategy",
+    "computer-vision", "game-automation", "ai-agent",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Games/Entertainment :: Real Time Strategy",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "Pillow>=10.0.0",
+    "opencv-python-headless>=4.8.0",
+]
+
+[project.optional-dependencies]
+ocr = [
+    "paddleocr>=3.0.0",
+    "paddlepaddle>=3.0.0",
+]
+anthropic = [
+    "anthropic>=0.25.0",
+]
+all = [
+    "paddleocr>=3.0.0",
+    "paddlepaddle>=3.0.0",
+    "anthropic>=0.25.0",
+    "pyyaml>=6.0",
+]
+dev = [
+    "pytest>=7.0",
+    "ruff>=0.1.0",
+]
+
+[project.urls]
+Repository = "https://github.com/sonpiaz/4x-game-agent"
+Issues = "https://github.com/sonpiaz/4x-game-agent/issues"
+
+[tool.setuptools.packages.find]
+include = ["agent*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"

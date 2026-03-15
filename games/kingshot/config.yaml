@@ -1,0 +1,37 @@
+# Kingshot Bot Configuration
+# All game-specific settings in one place.
+
+# LLM Models
+strategic_model: "claude-sonnet-4-20250514"   # Big-picture review (~every 30 min)
+tactical_model: "claude-haiku-4-5-20251001"   # Step-by-step fallback (cheap)
+strategic_max_tokens: 1500
+tactical_max_tokens: 300
+
+# ADB Device
+adb_device: "emulator-5554"
+
+# Timing (seconds)
+tap_delay: 0.08           # Between rapid taps
+action_delay: 0.3         # Between different actions
+menu_load_wait: 1.5       # Wait for menu transitions
+strategic_interval: 60    # Between strategic re-evaluations
+step_delay: 2.0           # After tap before next screenshot
+max_steps_per_goal: 25    # Max steps before forced re-plan
+
+# Paths
+screenshot_path: "/tmp/kingshot_screen.png"
+
+# Resource Rules
+min_gems_to_spend: 500
+never_spend_gems_on:
+  - food
+  - wood
+  - stone
+  - gold
+
+# Dashboard
+dashboard_port: 8080
+
+# Screen Resolution Reference
+reference_width: 1440
+reference_height: 2560
