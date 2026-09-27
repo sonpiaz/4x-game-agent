@@ -6,6 +6,7 @@ Matches visual patterns (building sprites, buttons, icons) regardless
 of screen scroll position.
 """
 import os
+
 import cv2
 import numpy as np
 
@@ -109,12 +110,15 @@ class TemplateMatcher:
             conf = float(result[pt[1], pt[0]])
             matches.append((cx, cy, round(conf, 3)))
 
-        if not matches:
+        if not matches or max_results <= 0:
             return []
 
         # Deduplicate close matches (within 50px)
         matches.sort(key=lambda m: m[2], reverse=True)
         deduped = [matches[0]]
+        if len(deduped) >= max_results:
+            return deduped
+
         for m in matches[1:]:
             if not any(abs(m[0] - d[0]) < 50 and abs(m[1] - d[1]) < 50
                        for d in deduped):
